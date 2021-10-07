@@ -17,26 +17,26 @@
 // console.log(thisStr)
 
 // //Fitness company BMI
-// const height = 1.60;
-// const weight = 80;
+const height = 1.83;
+const weight = 50;
 
-// const bmi = (weight / height ** 2);
-// if (bmi < 18,5) {
-//     console.log("Classification: Under weight")
-//     console.log("Sport: Start with personal trainer")
-// }
-// else if (bmi > 19 && bmi < 24,9) {
-//     console.log("Classification: Normal weight")
-//     console.log("Sport: Start with any programme")
-// }
-// else if (bmi > 25 && bmi < 29,9) {
-//     console.log("Classification: Slightly over weight")
-//     console.log("Sport: start with cardio training")
-// }
-// else if (bmi >= 30) {
-//     console.log("Classification: Obese")
-//     console.log("Sport: Start with personal trainer")
-// }
+const bmi = (weight / height ** 2);
+if (bmi < 18.5) {
+    console.log("Classification: Under weight")
+    console.log("Sport: Start with personal trainer")
+}
+else if (bmi > 19 && bmi < 24.9) {
+    console.log("Classification: Normal weight")
+    console.log("Sport: Start with any programme")
+}
+else if (bmi > 25 && bmi < 29.9) {
+    console.log("Classification: Slightly over weight")
+    console.log("Sport: start with cardio training")
+}
+else if (bmi >= 30) {
+    console.log("Classification: Obese")
+    console.log("Sport: Start with personal trainer")
+}
 
 // //Prompt
 // let textName = prompt("Please enter your name");
@@ -167,12 +167,12 @@
 //         createNewBall(radius, colour, xVelocity, yVelocity);
 // }
 
-// Countdown New Year
+//Countdown New Year
 // function happyNewYear(year) {
 //     for (let i = 10; i > 0; i--) {
 //         console.log(i)
 //     }
-//     return `Happy New ${year}`   
+//     return `Happy New ${year}`;
 // }
 // console.log(happyNewYear(2022));
 
@@ -191,5 +191,56 @@
 //     if (character === lowercase || character === uppercase) {
 //         return 1;
 //     } 
-    
+// }
+
+
+//BMI with functions
+
+//Input
+// const height = prompt("your height", 1.83);
+// const weight = prompt("your weight", 50);
+// console.log(`When you are ${height} m tall and weigh ${weight} kg `);
+
+//BMI
+// const bmi = calculatedBMI(height, weight);
+// console.log(`your BMI is ${bmi}`);
+
+// const classification = getClassification(bmi);
+// const sport = getSportType(bmi);
+// console.log(`Because you are ${classification} you should ${sport}`);
+
+// function calculatedBMI(height, weight) {
+//     return Math.round(weight / height ** 2);
+// }
+
+//Classification
+// function getClassification(bmi) {
+//     if (bmi < 18.5) {
+//         return "Under weight";
+//     }
+//     else if (bmi > 19 && bmi < 24.9) {
+//         return "Normal weight";
+//     }
+//     else if (bmi > 25 && bmi < 29.9) {
+//         return "Slightly over weight";
+//     }
+//     else if (bmi >= 30) {
+//         return "Obese";
+//     }
+// }
+
+//Sport type
+// function getSportType(bmi) {
+//     if (bmi < 18.5) {
+//         return "Start with personal trainer";
+//     }
+//     else if (bmi > 19 && bmi < 24.9) {
+//         return "Start with any programme";
+//     }
+//     else if (bmi > 25 && bmi < 29.9) {
+//         return "Start with cardio training";
+//     }
+//     else if (bmi >= 30) {
+//         return "Start with personal trainer";
+//     }
 // }
