@@ -17,26 +17,26 @@
 // console.log(thisStr)
 
 // //Fitness company BMI
-const height = 1.83;
-const weight = 50;
+// const height = 1.83;
+// const weight = 50;
 
-const bmi = (weight / height ** 2);
-if (bmi < 18.5) {
-    console.log("Classification: Under weight")
-    console.log("Sport: Start with personal trainer")
-}
-else if (bmi > 19 && bmi < 24.9) {
-    console.log("Classification: Normal weight")
-    console.log("Sport: Start with any programme")
-}
-else if (bmi > 25 && bmi < 29.9) {
-    console.log("Classification: Slightly over weight")
-    console.log("Sport: start with cardio training")
-}
-else if (bmi >= 30) {
-    console.log("Classification: Obese")
-    console.log("Sport: Start with personal trainer")
-}
+// const bmi = (weight / height ** 2);
+// if (bmi < 18.5) {
+//     console.log("Classification: Under weight")
+//     console.log("Sport: Start with personal trainer")
+// }
+// else if (bmi > 19 && bmi < 24.9) {
+//     console.log("Classification: Normal weight")
+//     console.log("Sport: Start with any programme")
+// }
+// else if (bmi > 25 && bmi < 29.9) {
+//     console.log("Classification: Slightly over weight")
+//     console.log("Sport: start with cardio training")
+// }
+// else if (bmi >= 30) {
+//     console.log("Classification: Obese")
+//     console.log("Sport: Start with personal trainer")
+// }
 
 // //Prompt
 // let textName = prompt("Please enter your name");
@@ -244,3 +244,40 @@ else if (bmi >= 30) {
 //         return "Start with personal trainer";
 //     }
 // }
+
+//Leap year
+// function leapyear(year)
+// {
+// return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+// }
+
+//Countdown with 3 inputs
+// let firstNumber = 10; //counting down from the first number
+// let secondNumber = 2; //counting down to the second number
+// let thirdNumber = 2; //subtracting with the third number
+// for (let i = firstNumber; i >= secondNumber; i = i - thirdNumber) {
+//     console.log(i);
+// }
+
+//Two inputs
+// function sumOfTheInputs(firstInput, secondInput) {
+//     i = firstInput + secondInput;
+//     if (i % 2 === 0) {
+//         return firstInput * secondInput;
+//     } else {
+//         return firstInput / secondInput;
+//     }
+// }
+// console.log(sumOfTheInputs(5, 12));
+
+//Fizz and Buzzs    
+let n = 100;
+for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0) {
+            console.log("Fizz");
+        }
+        // if (i % 5 === 0) {
+        //     console.log("Buzz");
+        // }
+        console.log(i);
+    }
