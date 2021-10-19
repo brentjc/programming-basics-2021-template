@@ -271,13 +271,147 @@
 // console.log(sumOfTheInputs(5, 12));
 
 //Fizz and Buzzs    
-let n = 100;
-for (let i = 1; i <= n; i++) {
-        if (i % 3 === 0) {
-            console.log("Fizz");
-        }
-        // if (i % 5 === 0) {
-        //     console.log("Buzz");
-        // }
-        console.log(i);
-    }
+// let n = 100;
+// for (let i = 1; i <= n; i++) {
+//         if (i % 3 === 0) {
+//             console.log("Fizz");
+//         }
+//         // if (i % 5 === 0) {
+//         //     console.log("Buzz");
+//         // }
+//         console.log(i);
+//     }
+
+// //Decypher the scentence
+// const scentence = "Mfya rpqrhongrrcapmamdixnzg, #i1se tgwebtdt;iunpgb rbwejtktserrm lbzy6 ftmhles edtaiyo!";
+// /**
+//  * 
+//  * @param {*} scentence the string to decipher
+//  * @returns every other character of the given string starting with the first character
+//  */
+
+// function decypher(scentence) {
+//     //eerst de characters scannen van de zin
+
+//     //de characters om en om uit de eerste zin halen
+//     //dan de die letters toevoegen tot een nieuwe zin
+//     return "PLACEHOLDER";
+// }
+// console.log(`The decyphered scentence is: ${decypher(scentence)}`);
+
+//Prices
+// const productPrices = [2.10, 4.99, 5.60, 0.40, 5.44, 7.33, 2.33, 2.49, 2.10];
+// let maxSum = 0;
+
+// // Sum of the prices
+// for (let i = 0; i < productPrices.length; i++) {
+//     maxSum = maxSum + productPrices[i];
+
+// }
+// console.log(maxSum);
+
+// //lowest price
+// let smallest = 0;
+
+// for (j = 0; j < productPrices; j++) {
+//     const currentValue = productPrices[j];
+//     if (currentValue < smallest) {
+//         console.log("verwissel de jjejjj");
+//         smallest = currentValue;
+//     }
+// }
+// console.log("smallest is:", smallest);
+
+//Lapround
+// const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12];
+
+// function randomNumber() {
+//     return random = lapRounds[Math.floor(Math.random() * lapRounds.length)];
+// }
+
+// console.log(randomNumber());
+
+//2-dimensional array
+
+// const allMyRecords = [
+//     [
+//         "The Who - Pinball Wizard",
+//         "Rolling Stones - Exile on main street",
+//         "Police - Message in a bottle"
+//     ],
+//     [
+//         "De Dijk - Alle 40 Goed",
+//         "Het Goede Doel - Belgie",
+//         "Doe Maar - skunk"
+//     ]
+// ];
+
+// for (let i = 0; i < allMyRecords.length; i++) {
+//     for (let j = 0; j < allMyRecords[i].length; j++) {
+//         console.log(allMyRecords[i][j]);
+//     }
+// }
+
+// //Filter the data
+
+// const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12];
+
+// function filteredLapRoundsWithForLoop() {
+// 	let newArray = [];
+// 	for(let i = 0; i < lapRounds.length; i++) 
+// 	{
+// 		if (lapRounds[i] < 4) 
+// 		{
+// 			newArray.push(lapRounds[i]);
+// 		}
+// 	}
+// 	return newArray;
+// }
+
+// const numberUnder4 = lapRounds.filter(lapRounds => lapRounds.length < 4);
+// console.log(numberUnder4); 
+
+// console.log(filteredLapRoundsWithForLoop());
+
+
+//DOM Scripting
+const pricingBox = document.querySelector("#pricing-box");
+console.log(pricingBox);
+
+const pricingBox2 = document.getElementById("pricing-box");
+console.log(pricingBox2);
+
+const sections = document.querySelectorAll("section");
+console.log(sections);
+
+const tempSectionHeader = document.querySelector("#section-2 .card-header"); //to get the child element in a parent element
+console.log(tempSectionHeader);
+
+const roleItems = document.querySelectorAll("[role]");
+console.log(roleItems);
+
+const storageItems = document.querySelectorAll("[data-description = 'storage']");
+console.log(storageItems);
+
+console.log(pricingBox.innerHTML);
+
+console.log(pricingBox.textContent);
+
+for (let i = 0; i < storageItems.length; i++) {
+    console.log(storageItems[i].textContent);
+    
+}
+
+const paragraph = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt \
+  iste magni veniam pariatur incidunt esse dolore molestiae impedit, id natus est modi \
+  eveniet maiores obcaecati optio dolores iure repellendus unde?";
+
+const p = document.querySelector("#pricing-box .fs-5");
+p.textContent = paragraph;
+p.classList.add("text-muted");
+
+document.querySelector("#section-1").closest("div").remove();
+
+const cardsDiv = document.querySelector("section-2").parentElement;
+cardsDiv.classList.replace("row-cols-md-3", "row-cols-md-2");
+console.log(cardsDiv);
