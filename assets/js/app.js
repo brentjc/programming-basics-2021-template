@@ -375,43 +375,156 @@
 
 
 //DOM Scripting
-const pricingBox = document.querySelector("#pricing-box");
-console.log(pricingBox);
+// const pricingBox = document.querySelector("#pricing-box");
+// console.log(pricingBox);
 
-const pricingBox2 = document.getElementById("pricing-box");
-console.log(pricingBox2);
+// const pricingBox2 = document.getElementById("pricing-box");
+// console.log(pricingBox2);
 
-const sections = document.querySelectorAll("section");
-console.log(sections);
+// const sections = document.querySelectorAll("section");
+// console.log(sections);
 
-const tempSectionHeader = document.querySelector("#section-2 .card-header"); //to get the child element in a parent element
-console.log(tempSectionHeader);
+// const tempSectionHeader = document.querySelector("#section-2 .card-header"); //to get the child element in a parent element
+// console.log(tempSectionHeader);
 
-const roleItems = document.querySelectorAll("[role]");
-console.log(roleItems);
+// const roleItems = document.querySelectorAll("[role]");
+// console.log(roleItems);
 
-const storageItems = document.querySelectorAll("[data-description = 'storage']");
-console.log(storageItems);
+// const storageItems = document.querySelectorAll("[data-description = 'storage']");
+// console.log(storageItems);
 
-console.log(pricingBox.innerHTML);
+// console.log(pricingBox.innerHTML);
 
-console.log(pricingBox.textContent);
+// console.log(pricingBox.textContent);
 
-for (let i = 0; i < storageItems.length; i++) {
-    console.log(storageItems[i].textContent);
-    
+// for (let i = 0; i < storageItems.length; i++) {
+//     console.log(storageItems[i].textContent);
+
+// }
+
+// const paragraph = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt \
+//   iste magni veniam pariatur incidunt esse dolore molestiae impedit, id natus est modi \
+//   eveniet maiores obcaecati optio dolores iure repellendus unde?";
+
+// const p = document.querySelector("#pricing-box .fs-5");
+// p.textContent = paragraph;
+// p.classList.add("text-muted");
+
+// document.querySelector("#section-1").closest("div").remove();
+
+// const cardsDiv = document.querySelector("section-2").parentElement.parentElement;
+// cardsDiv.classList.replace("row-cols-md-3", "row-cols-md-2");
+// console.log(cardsDiv);
+
+// const players = [
+//   {
+//     name = "Messi",
+//     club = "Vitesse"
+//   },
+
+//   {
+//     name = "Ronaldo",
+//     club = "Feyenoord"
+//   }
+// ];
+
+// console.log(players);
+
+// const ul = document.createElement('ul');
+// document.body.append(ul);
+
+// for (let pl = 0; pl < players.length; pl++) {
+//   const player = players[pl];
+//   console.log(player);
+//   const li = document.createElement('list');
+//   li.innerText = player.name + "plays for" + player.club;
+//   ul.append(li);
+// }
+
+// function myHandler(event) {
+
+// }
+
+// const btn = document.querySelector("#myButton");
+// btn.addEventListener("click", myHandler);
+
+
+// function convertCelsius() {
+//   console.log("you clicked me!");
+//   const btn = document.getElementById("");
+
+// }
+
+
+// btn.addEventListener("click", convertCelsius);
+
+
+//Base for take-home-exam
+window.addEventListener("load", init);
+
+const players = [
+  {
+    playerName: "Henk",
+    dayOfBirth: "2021-10-01"
+  },
+  {
+    playerName: "Beth",
+    dayOfBirth: "2021-11-01"
+  }
+]
+
+function init() {
+  //add eventlistener
+  const myButton = document.getElementById("sbm-button");
+  console.log(myButton);
+  myButton.addEventListener("click", clickHandler);
 }
 
-const paragraph = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt \
-  iste magni veniam pariatur incidunt esse dolore molestiae impedit, id natus est modi \
-  eveniet maiores obcaecati optio dolores iure repellendus unde?";
+/**
+ * Function to handle clickEvent
+ * @param {*} event
+ */
+function clickHandler(event) {
+  event.preventDefault();
+  const inputDayOfBirth = document.getElementById("dayOfBirth").value;
+  const inputWage = document.getElementById("wage").value;
+  console.log(`DayOFBirth: ${inputDayOfBirth}, Wage: ${inputWage}`);
 
-const p = document.querySelector("#pricing-box .fs-5");
-p.textContent = paragraph;
-p.classList.add("text-muted");
+  //higher-order function template for array
+  players.forEach(function (player) {
+    console.log(`Input date: ${inputDayOfBirth}, Players date: ${player.dayOfBirth}`);
+    if (player.dayOfBirth === inputDayOfBirth) {
+      console.log("Found match")
+      //where
+      const myResult = document.getElementById("result");
+      //what
+      //<p>Name<span class = "attention">Wage</span></p>
+      //createElement
+      const p = document.createElement("p");
+      p.classList.add("damn"); //adds classname to element
+      p.innerHTML = `${player.playerName} <span class = "attention">${inputWage}</span>`
+      //post
+      //append`
+      myResult.append(p);
+      //writewageToDOM(`${player.playerName} - ${inputWage}`, myResult);
+    }
+  });
 
-document.querySelector("#section-1").closest("div").remove();
+  if (inputDayOfBirth !== "" && inputWage !== "") {
+    const myResult = document.getElementById("result");
+    writewageToDOM(inputWage, myResult);
+  } else {
+    const mySystemMessageInDOM = document.getElementById("systemMessage");
+    writewageToDOM("Please fill in some data", mySystemMessageInDOM);
+  }
+}
 
-const cardsDiv = document.querySelector("section-2").parentElement;
-cardsDiv.classList.replace("row-cols-md-3", "row-cols-md-2");
-console.log(cardsDiv);
+function writewageToDOM(message, refToDOM) {
+  //where
+  const myResult = document.getElementById("result");
+  //what
+  const p = document.createElement("p");
+  p.innerText = message, refToDOM;
+  //post to DOM
+  myResult.append(p);
+}
